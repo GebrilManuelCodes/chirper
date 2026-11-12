@@ -45,8 +45,12 @@
     </main>
 
     <footer class="footer footer-center p-5 bg-base-300 text-base-content text-xs">
-        <div>
+        <div class="flex flex-col sm:flex-row items-center gap-2">
             <p>© {{ date('Y') }} Chirper - Built with Laravel and ❤️</p>
+            <span class="hidden sm:inline text-base-content/40">·</span>
+            <a href="{{ route('splash') }}" class="link link-hover text-base-content/70">
+                🐦 Ver tela splash
+            </a>
         </div>
     </footer>
 </body>

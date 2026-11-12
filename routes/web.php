@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\ChirpController;
-use App\Http\Controllers\Auth\Register;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\Auth\Logout;
+use App\Http\Controllers\Auth\Register;
+use App\Http\Controllers\ChirpController;
 
-Route::get('/', [ChirpController::class, 'index']);
+Route::get('/', [ChirpController::class, 'index'])->name('home');
+Route::get('/home', [ChirpController::class, 'index']);
+Route::view('/splash', 'splash')->name('splash');
 
 // Protected routes
 Route::middleware('auth')->group(function () {

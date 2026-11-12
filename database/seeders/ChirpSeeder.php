@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use App\Models\Chirp;
 use Illuminate\Database\Seeder;
 
 class ChirpSeeder extends Seeder
@@ -12,24 +11,24 @@ class ChirpSeeder extends Seeder
     {
         // Create a few sample users if they don't exist
         $users = User::count() < 3
-				    ? collect([
-				        User::create([
-				            'name' => 'Alice Developer',
-				            'email' => 'alice@example.com',
-				            'password' => bcrypt('password'),
-				        ]),
-				        User::create([
-				            'name' => 'Bob Builder',
-				            'email' => 'bob@example.com',
-				            'password' => bcrypt('password'),
-				        ]),
-				        User::create([
-				            'name' => 'Charlie Coder',
-				            'email' => 'charlie@example.com',
-				            'password' => bcrypt('password'),
-				        ]),
-				    ])
-				    : User::take(3)->get();
+                    ? collect([
+                        User::create([
+                            'name' => 'Alice Developer',
+                            'email' => 'alice@example.com',
+                            'password' => bcrypt('password'),
+                        ]),
+                        User::create([
+                            'name' => 'Bob Builder',
+                            'email' => 'bob@example.com',
+                            'password' => bcrypt('password'),
+                        ]),
+                        User::create([
+                            'name' => 'Charlie Coder',
+                            'email' => 'charlie@example.com',
+                            'password' => bcrypt('password'),
+                        ]),
+                    ])
+                    : User::take(3)->get();
 
         // Sample chirps
         $chirps = [

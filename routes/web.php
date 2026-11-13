@@ -7,6 +7,7 @@ use App\Http\Controllers\ChirpController;
 
 Route::get('/', [ChirpController::class, 'index'])->name('home');
 Route::get('/home', [ChirpController::class, 'index']);
+Route::get('/dashboard', [ChirpController::class, 'index'])->name('dashboard');
 Route::view('/splash', 'splash')->name('splash');
 
 // Protected routes
